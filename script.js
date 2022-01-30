@@ -4,22 +4,24 @@ if (response.status !== 200) {
     response.status);
 } else {
     const content=await response.json();
-    jsonToHtml(content);
+    for(let i=0; i<content.entries.length; i++){
+        jsonToHtml(content.entries[i]);
+    }
 }
 
-function jsonToHtml(content){
+function jsonToHtml(entry){
     const div=document.createElement("div");
     const title=document.createElement("h2");
-    title.innerHTML=content.title;
+    title.innerHTML=entry.title;
     const date=document.createElement("h3");
-    date.innerHTML=content.date;
+    date.innerHTML=entry.date;
     const paragraph=document.createElement("p");
-    paragraph.innerHTML=content.content;
+    paragraph.innerHTML=entry.content;
     div.classList.add("entry");
     div.appendChild(title);
     div.appendChild(date);
     div.appendChild(paragraph);
-    div.appendChild(document.createElement("hr"));
+    // div.appendChild(document.createElement("hr"));
     document.getElementById("content").appendChild(div);
-    console.log(content);
+    console.log(entry);
 }
