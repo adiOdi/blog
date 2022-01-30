@@ -13,6 +13,9 @@ h3{font-size:small;}
     margin-left:auto;
     margin-right: auto;
 }
+.entry>p{
+    word-wrap:break-word;
+}
 .entry{
     border-bottom-style:solid;
     padding-top:1em;
