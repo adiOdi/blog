@@ -1,4 +1,4 @@
-const response=await fetch('./content/example.json');
+const response=await fetch('./content.json');
 if (response.status !== 200) {
     console.log('Looks like there was a problem. Status Code: ' +
     response.status);
